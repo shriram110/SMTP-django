@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sent</title>
+</head>
+<body> 
+  {% if flag == 1 %}
+  <h1>total : {{total}}</h1>
+  <h1>Average : {{average}}</h1>
+  <h1>Course code : {{course}}</h1>
+  <h1>Message sent !!!!</h1>
+  {% else %}
+  <h1>Invalid Id exception Record not found or message not sent properly</h1>
+  {% endif %}
+</body>
+</html>

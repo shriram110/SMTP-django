@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <script src="{% static 'style.js' %}"></script>
+</head>
+<body>
+  <div>
+    <form action="/input" method="post">
+      {% csrf_token %}
+      <h2>User id: </h2>
+      <input type="text" name="userid" id="">
+      <h2>course_code</h2>
+      <select name="course_code" id="">
+        {% for course in courses %}
+        <option value="{{course.courseCode}}">{{course.courseCode}}</option>
+        {% endfor %}
+      </select>
+      <h2>Attendance hours : </h2>
+      <input type="range" name="attendance_hrs" id="" min="0" max="10" onchange="update(this.value);">
+      <h1 id="h1tag"></h1>
+      <h2>Number of queries : </h2>
+      <input type="range" name="queries" id="" min="0" max="10" onchange="update1(this.value);">
+      <h1 id="h1tag1"></h1>
+      <h2>Immediate response : </h2>
+      <input type="range" name="response" id="" min="0" max="10" onchange="update2(this.value);">
+      <h1 id="h1tag2"></h1>
+      <h2>Submission : </h2>
+      <input type="range" name="submission" id="" min="0" max="10" onchange="update3(this.value);">
+      <h1 id="h1tag3"></h1>
+      <input type="submit" value="Save">
+    </form>
+  </div>
+  <a href="/mail">Send Email</a>
+</body>
+<script>
+
+</script>
+</html>
